@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Assignment1_Fall2019
 {
@@ -6,7 +6,7 @@ namespace Assignment1_Fall2019
     {
         static void Main(string[] args)
         {
-            //integers for self diving array
+
             int a = 1, b = 22;
             printSelfDividingNumbers(a, b);
 
@@ -81,13 +81,15 @@ namespace Assignment1_Fall2019
 
                 for (i = 0; i < 5; i++)
                 {
+                    //loop if j is still less than i
                     for (j = 0; j < i; j++)
                     {
-                        Console.Write(" ");
+                        Console.Write(" "); //write blank
                     }
+                    //loop if k is less than n
                     for (k = 0; k < n; k++)
                     {
-                        Console.Write("* ");
+                        Console.Write("* "); //add star
                     }
                     n--;
                     Console.WriteLine();
@@ -106,15 +108,15 @@ namespace Assignment1_Fall2019
             {
                 {
                     int count = 0;
-                    foreach (int d in S)
+                    foreach (int d in S) //loop to check stones for jewels
                     {
-                        foreach (int b in J)
+                        foreach (int b in J) //loop to check jewels 
                         {
-                            if (d == b)
+                            if (d == b) //if jewels are found in stones add to count
                                 count++;
                         }
                     }
-                    return count;
+                    return count; // return count
 
                 }
             }
@@ -123,18 +125,19 @@ namespace Assignment1_Fall2019
                 Console.WriteLine("Exception occured while computing numJewelsInStones()");
             }
 
-            return 0;
+            return 0; //return 0 if nothing found
         }
 
 
+        /*Checks all divisibility of all digits vs. actual number*/
         static bool isSelfDividing(int n)
         {
             int currentDigit = 0;
             int actualNumber = n;
             while (n > 0)
             {
-                currentDigit = n % 10;
-                if ((currentDigit == 0) || (actualNumber % currentDigit != 0))
+                currentDigit = n % 10; // get digit from actualNumber
+                if ((currentDigit == 0) || (actualNumber % currentDigit != 0)) //if either returns 0
                 {
                     return false;
                 }
@@ -145,4 +148,3 @@ namespace Assignment1_Fall2019
 
     }
 }
-
